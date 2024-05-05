@@ -2,6 +2,7 @@ import tkinter
 from tkinter import *
 from tkinter import filedialog
 import os
+from tkinter import messagebox
 
 def main():
     filename = filedialog.askdirectory()
@@ -17,6 +18,8 @@ def main():
         os.system(f'rename "{dir_list[i]}" "{new_name}"')
         print(f'rename "{dir_list[i]}" "{new_name}"')
         print(f"renamed to {new_name}")
+    messagebox.showinfo("showinfo", f"done")
+
 
 
 root = Tk()
@@ -25,8 +28,6 @@ lbl = Label(text="Tool for deleting prefix on \nhttps://spotify-downloader.com/"
 lbl.place(relx=0.5,rely=0.5,anchor=tkinter.S)
 button2 = Button(text="Browse", command=main)
 button2.place(relx=0.5,rely=0.5,anchor=tkinter.N)
-
-
 
 root.mainloop()
 
